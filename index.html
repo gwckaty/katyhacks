@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>SRC Hacks</title>
+        <link rel="shortcut icon" type="image/x-icon" href="images/borderCraneSquare.png">
+        <style>
+
+            /* GENERAL */
+
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+            @font-face {
+                font-family: Nexa;
+                font-weight: #bold;
+                src: url(fonts/nexaBold.otf);
+            }
+
+            @font-face {
+                font-family: Nexa;
+                src: url(fonts/nexaLight.otf);
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Roboto', sans-serif;
+                /* font-family: Bebas Light; */
+            }
+
+            p {
+                margin: 0;
+                padding-bottom: 0;
+                color: #111111;
+                font-size: 1.5em;
+                margin-bottom: 1.5em;
+                /* font-family: Nexa; */
+            }
+
+            a {
+                text-decoration: none;
+                color: currentColor;
+            }
+
+            hr {
+                margin-bottom: 1.5em;
+            }
+
+            .title {
+                font-weight: bold;
+                font-size: 4em;
+                margin-bottom: 0.25em;
+
+                /* font-family: Bebas Neue; */
+            }
+
+            .subtitle {
+                font-weight: bold;
+                font-size: 3em;
+                margin-bottom: 0.25em;
+
+                /* font-family: Bebas Neue; */
+            }
+
+            .wave {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: fit-content;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+            }
+
+            .wave img {
+                margin: 0;
+                width: 100%;
+                min-width: 300em;
+                height: 17em;
+            }
+
+            #wave {
+                height: 12.5em;
+            }
+
+            /* SVG LOGO */
+
+            #heroTitle {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            #heroTitle svg:nth-child(8), #heroTitle svg:nth-child(3) {
+                margin-right: 1.5em;
+            }
+
+            svg {
+                height: 12em;
+            }
+
+            svg path {
+                stroke: white;
+                fill: white;
+                animation: outlineTrace 2.5s ease;
+                stroke-width: 5;
+            }
+
+            #s path {
+                stroke-dasharray: 2750.00 2750.00;
+            }
+
+            #r path {
+                stroke-dasharray: 2600.00 2600.00;
+            }
+
+            #c path {
+                stroke-dasharray: 2800.00 2800.00;
+            }
+
+            #o path {
+                stroke-dasharray: 1850.00 1850.00;
+            }
+
+            #d path {
+                stroke-dasharray: 1950.00 1950.00;
+            }
+
+            #e path {
+                stroke-dasharray: 2700.00 2700.00;
+            }
+
+            #i path {
+                stroke-dasharray: 1650.00 1650.00;
+            }
+
+            #h path {
+                stroke-dasharray: 3300.00 3300.00;
+            }
+
+            #a path {
+                stroke-dasharray: 2250.00 2250.00;
+            }
+
+            #k path {
+                stroke-dasharray: 3200.00 3200.00;
+            }
+            
+            @keyframes outlineTrace {
+                0% {
+                    stroke-dashoffset: 2800.00;
+                    fill: transparent;
+                }
+                75% {
+                    fill: transparent;
+                }
+                100% {
+                    stroke-dashoffset: 0;
+                    fill: white;
+                }
+            }
+
+            /* BANNER */
+
+            #hero {
+                width: 100%;
+                height: 100vh;
+                min-height: 500px;
+                margin: 0;
+                padding: 0;
+                background-color: #111111;
+                pointer-events: none;
+                color: white;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                user-select: none;
+                overflow: hidden;
+            }
+
+            #heroActive {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                pointer-events: none;
+                max-height: 80%;
+                margin-left: 2.5vw;
+                /* border: 1px solid blue; */
+                z-index: 1;
+            }
+
+            /* #mainLogo {
+                max-height: 50%;
+                max-width: 30vw;
+                margin-left: 2.5vw;
+                z-index: 1;
+            } */
+
+            #buttonRow {
+                height: 7.5em;
+                width: 100%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                animation: fadeIn 1.5s ease 1.75s;
+                animation-fill-mode: backwards;
+            }
+
+            button {
+                max-height: 100%;
+                padding: 1em;
+                background-color: transparent;
+                border: 2px solid white;
+                border-radius: 10px;
+                padding: 2.5em;
+                padding-bottom: 2em;
+                pointer-events: all;
+                margin-right: 2.5em;
+                transition: background-color 0.25s ease 0s;
+            }
+
+            button:focus {
+                outline: none;
+            }
+
+            button:hover {
+                background-color: white;
+                cursor: pointer;
+            }
+
+            button:hover > p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            button > p {
+                font-size: 3.5em;
+                color: white;
+                padding-bottom: 0;
+                /* font-family: Bebas Light; */
+                font-family: Bebas Neue;
+                transition: color 0.25s ease 0s;
+                margin-bottom: 0;
+            }
+
+            .invert > p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .invert:hover {
+                background-color: transparent;
+            }
+
+            .invert:hover > p {
+                color: white;
+            }
+
+            .invert {
+                background-color: white;
+            }
+
+            #heroSubtitle {
+                font-size: 5em;
+                font-weight: normal;
+                color: white;
+                font-family: Bebas Neue;
+                animation: fadeIn 1.5s ease 1.75s;
+                animation-fill-mode: backwards;
+                margin-bottom: 0;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 100%;
+                }
+            }
+
+            #heroSubContainer {
+                margin-top: 2em;
+            }
+
+            .background {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                /* filter: blur(5px); */
+                animation: fadeIn 1.5s ease 1.75s;
+                animation-fill-mode: backwards;
+            }
+
+            /* INFO */
+
+            #info {
+                width: 100%;
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            #infoContent {
+                margin: 5em 15%;
+            }
+
+            /* #infoContent section:nth-child(even) {
+                text-align: right;
+            } */
+
+            #counter {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                text-align: center;
+                width: 100%;
+                /* border: 1px solid black; */
+                margin-bottom: 0;
+            }
+
+            #counter > div {
+                padding: 0 1em;
+                min-width: 10em;
+            }
+
+            #counter div * {
+                margin-bottom: 0.25em;
+            }
+
+            #counter div {
+                /* border: 1px solid black; */
+                margin-top: 0.25em;
+            }
+
+            .counter-value {
+                font-size: 5em;
+            }
+
+            /* FAQ */
+            #faq {
+                background-color: #FF8370; /*#69b5fc;*/ /* #99ccff;*/
+                width: 100%;
+                height: fit-content;
+            }
+
+            #faqContent {
+                margin: 0 15%;
+                padding: 1.5em 0;
+            }
+
+            #faqContent p {
+                color: white;
+            }
+
+            #faqContent section:nth-child(odd) {
+                text-align: right;
+            }
+
+            /* SCHEDULE */
+
+            #schedule {
+                background-color: white;
+                height: fit-content;
+                width: 100%;
+            }
+
+            #scheduleContent {
+                margin: 5em 25%;
+            }
+
+            table {
+                font-size: 3em;
+                width: 100%;
+                text-align: left;
+                padding-bottom: 0.25em;
+                margin-bottom: 0.5em;
+            }
+
+            tr td {
+                transition: text-shadow 0.25s ease 0s;
+            }
+
+            tr:hover td {
+                text-shadow: 0 0 5px #FEB086;
+            }
+
+            td, th {
+                border-bottom: 1px dashed #111111;
+                padding: 0.25em 0;
+            }
+
+            th {
+                padding-top: 0;
+            }
+
+            td:nth-child(1) {
+                width: 3em;
+                padding-right: 0.25em;
+            }
+
+            /* JUDGES & TEAM */
+
+            #judges {
+                background-color: #111111;
+                height: fit-content;
+                width: 100%;
+            }
+
+            #judgesContent {
+                margin: 0 15%;
+                padding: 1.5em 0;
+            }
+
+            .profileContainer {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                margin-top: 2.5em;
+            }
+
+            .profile {
+                display: flex;
+                width: 20em;
+                height: 30em;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #team .profile {
+                height: 25em;
+            }
+
+            .profilePhoto {
+                max-width: 75%;
+                border-radius: 50%;
+                transition: max-width 0.25s ease 0s /* , transform 0.25s ease 0s */;
+            }
+
+            .profilePhoto:hover {
+                max-width: 85%;
+                /* transform: rotate(5000deg); */
+                /* transform: rotate3d(1, 1, 1, 5000deg) */
+            }
+
+            .profileCaption {
+                margin-top: 1em;
+            }
+
+            .profileCaption p {
+                margin: 0;
+            }
+
+            .profileCaption p:nth-child(1) {
+                font-weight: bold;
+            }
+
+            .profileCaption p:nth-child(3) {
+                font-size: 1.75em;
+                font-weight: bold;
+            }
+
+            #judgesContent p {
+                color: white;
+                text-align: center;
+            }
+
+            #team {
+                background-color: #FF8370 /*#69b5fc;*/ /* #99ccff;*/
+                height: fit-content;
+                width: 100%;
+            }
+
+            #teamContent {
+                margin: 0 5%;
+                padding: 1.5em 0;
+            }
+
+            #teamContent p {
+                text-align: center;
+                color: white;
+            }
+
+            /* SPONSORS */
+
+            #sponsors {
+                background-color: white;
+                height: fit-content;
+                width: 100%;
+            }
+
+            #sponsorsContent {
+                margin: 5em 10%;
+            }
+
+            #sponsorsContent p {
+                text-align: center;
+            }
+
+            .sponsorContainer {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                height: fit-content;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* #sponsorsContent section:nth-last-of-type(1) {
+                margin-bottom: 2.5em;
+            } */
+
+            #sponsorsContent section {
+                /* margin: 2.5em 0 3.5em 0; */
+                /* border: 1px solid black; */
+            }
+
+            .sponsorContainer {
+                margin: 2.5em 0 3.5em 0;
+            }
+
+            #large {
+                margin-bottom: 0em;
+            }
+
+            #small {
+                margin-top: 0em;
+            }
+
+            /* #partner {
+                margin-bottom: 2.5em;
+            } */
+
+            .sponsorContainer img {
+                /* max-width: 25em; */
+                max-height: 20em;
+                margin-top: 0;
+                margin: 2.5em;
+                transition: filter 0.2s ease-out 0s, transform 0.2s ease-out 0s;
+            } 
+
+            #partner img {
+                max-width: 35em;
+            }
+
+            #large img {
+                max-width: 32.5em;
+            }
+
+            #small img {
+                max-width: 25em;
+                max-height: 7.5em;
+            }
+
+            .sponsorContainer img:hover {
+                transform: translate(-0.2vw,-0.2vw);
+                filter: drop-shadow(0.4vw 0.4vw 5px #cccccc);
+            }
+
+            /* FOOTER */
+
+            #footer {
+                background-color: white;
+                height: fit-content;
+                width: 100%;
+            }
+
+            #footerContent {
+                margin: 5em 15%;
+            }
+
+            #footerContent p:nth-child(n + 1) {
+                margin-bottom: 0.25em;
+            }
+
+
+            @media (orientation: portrait) {
+                .background {
+                    /* filter: blur(5px); */
+                }
+            }
+
+            /* @media only screen and (max-width: 1000px), only screen and (max-height: 750px) { */
+            @media only screen and (max-width: 1250px), only screen and (max-height: 750px) {
+                svg {
+                    height: 9.6em;
+                }
+                #heroSubtitle {
+                    font-size: 4em;
+                }
+                #heroSubContainer {
+                    margin-top: 1.6em;
+                }
+                #heroTitle svg:nth-child(3), #heroTitle svg:nth-child(8) {
+                    margin-right: 1.2em;
+                }
+                button {
+                    padding: 2em;
+                    padding-bottom: 1.5em;
+                    border-radius: 7.5px;
+                    margin-right: 2em;
+                }
+                #buttonRow {
+                    height: 6em;
+                }
+                button > p {
+                    font-size: 2.5em;
+                }
+            }
+
+            /* @media only screen and (max-width: 750px), only screen and (max-height: 500px) { */
+            @media only screen and (max-width: 1000px), only screen and (max-height: 500px) {
+                svg {
+                    height: 7.2em;
+                }
+                #heroSubtitle {
+                    font-size: 3em;
+                }
+                #heroSubContainer {
+                    margin-top: 1.2em;
+                }
+                #heroTitle svg:nth-child(3), #heroTitle svg:nth-child(8) {
+                    margin-right: 0.9em;
+                }
+                button {
+                    padding: 1.5em;
+                    padding-bottom: 1em;
+                    border-radius: 6.25px;
+                    margin-right: 1.5em;
+                }
+                #buttonRow {
+                    height: 4.5em;
+                    flex-wrap: wrap;
+                }
+                button > p {
+                    font-size: 2.125em;
+                }
+                #counter {
+                    justify-content: space-between;
+                }
+            }
+
+            @media only screen and (max-width: 1500px) {
+                #sponsorsContent {
+                    margin: 5em 10%;
+                }
+                #partner img {
+                    max-height: 12em;
+                }
+                #large img {
+                    max-width: 27em;
+                    max-height: 11.25em;
+                }
+                #small img {
+                    max-width: 20em;
+                    max-height: 7.5em;
+                }
+                .sponsorContainer img {
+                    margin: 2em;
+                }
+            }
+
+            @media only screen and (max-width: 1000px) {
+                #sponsorsContent {
+                    margin: 5em 10%;
+                }
+                #large img {
+                    max-width: 16em;
+                    max-height: 9em;
+                    margin: 1em;
+                }
+                #small img {
+                    max-width: 12.5em;
+                    max-height: 4.5em;
+                    margin: 1.25em;
+                }
+            }
+
+            @media only screen and (max-width: 850px) {
+                #counter {
+                    flex-direction: column;
+                }
+            }
+
+            @media only screen and (max-width: 750px) {
+                .sponsorContainer img {
+                    max-width: 20em;
+                    max-height: 12em;
+                    margin: 2em;
+                    margin-top: 0;
+                } 
+                #partner img {
+                    max-width: 24em;
+                }
+            }
+
+            @media only screen and (max-width: 500px) {
+                #small img {
+                    max-width: 15em;
+                    max-height: 6em;
+                    margin: 1.5em;
+                    margin-top: 0;
+                }
+                .profile {
+                    height: 105vw;
+                }
+                #team .profile {
+                    height: 90vw;
+                }
+            }
+
+            /* @media only screen and (max-width: 600px) { */
+            @media only screen and (max-width: 800px) {
+                svg {
+                    height: 4.8em;
+                }
+                #heroSubtitle {
+                    font-size: 2em;
+                }
+                #heroSubContainer {
+                    margin-top: 0.8em;
+                }
+                #heroTitle svg:nth-child(3), #heroTitle svg:nth-child(8) {
+                    margin-right: 0.6em;
+                }
+                button {
+                    padding: 1em;
+                    padding-bottom: 0.5em;
+                    border-radius: 5px;
+                    margin-right: 1em;
+                }
+                #buttonRow {
+                    height: 3em;
+                    flex-wrap: wrap;
+                }
+                button > p {
+                    font-size: 1.75em;
+                }
+                .sponsorContainer img {
+                    max-width: 15em;
+                    max-height: 9em;
+                    margin: 0 1.5em;
+                    margin-bottom: 1.5em;
+                } 
+                #partner img {
+                    max-width: 18em;
+                }
+                #scheduleContent {
+                    margin: 5em 12.5%;
+                }
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body data-new-gr-c-s-check-loaded="14.1062.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+
+        <!-- HERO IMAGE -->
+
+        <section id="hero">
+            <!-- <img id= "mainLogo" src= "images/crane.png"> -->
+            <div id="heroActive">
+                <!-- <p id= "heroTitle">SRC CODE II</p> -->
+                <section id="heroTitle">
+                  <img src="img/logo_long.png" style="max-width: 90%;">
+<!--                     <svg viewBox="0 0 355 700">
+                        <g id="s">
+                            <path d="M26 532c0 112 55 176 162 176s162 -64 162 -176v-22h-104v29c0 50 -20 69 -55 69s-55 -19 -55 -69c0 -144 215 -171 215 -371c0 -112 -56 -176 -164 -176s-164 64 -164 176v43h104v-50c0 -50 22 -68 57 -68s57 18 57 68c0 144 -215 171 -215 371z" transform="scale(1,-0.97) translate(-10,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 400 700">
+                        <g id="r">
+                            <path d="M382 0h-112c-6 18 -10 29 -10 86v110c0 65 -22 89 -72 89h-38v-285h-110v700h166c114 0 163 -53 163 -161v-55c0 -72 -23 -119 -72 -142c55 -23 73 -76 73 -149v-108c0 -34 1 -59 12 -85zM203 600h-53v-215h43c41 0 66 18 66 74v69c0 50 -17 72 -56 72z" transform="scale(1,-1) translate(0,-700)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 390 700">
+                        <g id="c">
+                            <path d="M255 261h104v-93c0 -112 -56 -176 -164 -176s-164 64 -164 176v364c0 112 56 176 164 176s164 -64 164 -176v-68h-104v75c0 50 -22 69 -57 69s-57 -19 -57 -69v-378c0 -50 22 -68 57 -68s57 18 57 68v100z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 390 700">
+                        <g id="h">
+                            <path d="M150 300v-300h-110v700h110v-300h125v300h112v-700h-112v300h-125z" transform="scale(1,-0.97) translate(-20,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 400 700">
+                        <g id="a">
+                            <path d="M284 700l112 -700h-111l-19 127h-135l-19 -127h-101l112 700h161zM198 576l-53 -354h106z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 390 700">
+                        <g id="c">
+                            <path d="M255 261h104v-93c0 -112 -56 -176 -164 -176s-164 64 -164 176v364c0 112 56 176 164 176s164 -64 164 -176v-68h-104v75c0 50 -22 69 -57 69s-57 -19 -57 -69v-378c0 -50 22 -68 57 -68s57 18 57 68v100z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 400 700">
+                        <g id="k">
+                            <path stroke-width="5" d="M291 0l-107 279l-34 -64v-215h-110v700h110v-305l144 305h110l-153 -312l153 -388h-113z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 390 700">
+                        <g id="s">
+                            <path d="M26 532c0 112 55 176 162 176s162 -64 162 -176v-22h-104v29c0 50 -20 69 -55 69s-55 -19 -55 -69c0 -144 215 -171 215 -371c0 -112 -56 -176 -164 -176s-164 64 -164 176v43h104v-50c0 -50 22 -68 57 -68s57 18 57 68c0 144 -215 171 -215 371z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="25 0 175 700">
+                        <g id="i">
+                            <path d="M40 0v700h110v-700h-110z" transform="scale(1,-1) translate(0,-700)"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="25 0 175 700">
+                        <g id="i">
+                            <path d="M40 0v700h110v-700h-110z" transform="scale(1,-1) translate(0,-700)"></path>
+                        </g>
+                    </svg> -->
+                </section>
+                <section id="heroSubContainer">
+                    <p id="heroSubtitle">February 22 - 23</p>
+                    <p id="heroSubtitle">with Girls Who Code Katy</p>
+                </section>
+                <section id="buttonRow">
+                    <!-- <button class= "register"><p><a href= "https://docs.google.com/forms/d/e/1FAIpQLSc-mk4eCh_rTDSZhwPtx4TyOufRlhGdwYAdtxsIfJd1Bb0I_g/viewform?usp=sf_link" target= "_blank">Sign-up as an Attendee</a></p></button>
+                    <button class= "register"><p><a href= "https://docs.google.com/forms/d/e/1FAIpQLSccRvLsQ3PtKLcTtDXoxnmAwP212tEjN8F9zei1eq07xtdu6w/viewform?usp=sf_link" target= "_blank">Sign-up as a Mentor</a></p></button> -->
+                    <!-- <button class= "register"><p><a href= "https://docs.google.com/forms/d/e/1FAIpQLSdyC5wSKVMkFzBhh90JXQW2zJS-T-P_6rJAruuKiq5EqUDyTQ/viewform?usp=sf_link" target= "_blank">Pre-register for SRC Hacks II</a></p></button> -->
+                    <!-- <button><p><a href= "https://docs.google.com/presentation/d/16tBphYxeZ9o8OTRdu-EFcA2A4vwpRpEx3fF4y-S6KJM/edit?usp=sharing" target= "_blank">Opening Ceremony Slides</a></p></button> -->
+                    <button><p><a href="https://forms.gle/c4BgC2EqpqcGPyXo6" target="_blank">Registration Form</a></p></button>
+                    <!-- <button><p><a href= "https://discord.gg/wnxhrDV" target= "_blank">Join Our Discord</a></p></button> -->
+                </section>
+            </div>
+            <canvas class="background" width="2988" height="2262" style="width: 100%; height: 100%;"></canvas>
+        </section>
+
+        <!-- INFO -->
+
+        <section id="info">
+            <section class="wave">
+                <img id="wave" src="images/wavecheck.svg">
+            </section>  
+            <section id="infoContent">
+                <section>
+                    <p class="title" style="text-align: center;">What is Katy Youth Hacks?</p>
+                    <p style="text-align: center;">SRC Hacks is a 72-hour long hackathon hosted by Girls Who Code Katy for students from all around the world. Our theme for this year is social equity - we hope to guide participants to take a greater role in fighting social problems while encouraging underrepresented groups to engage in computer science and tech development. By challenging high schoolers to solve real-world problems with technology, KatyYouthHacks aims to inspire the next generation of developers. 
+
+<!--                       <p></p>We provide a venue, food, drinks, swag, etc. all at no cost to ensure every attendee has the best experience possible while building their projects!</p> -->
+                </section>
+                <!-- <section>
+                    <p class= "title">What's New This Year</p>
+                    <p>This year, we will be hosting our second annual SRC Hacks event. Last year, we had hundreds of attendees submitting all sorts of projects, with $20,000 in prizes being given away. For SRC Hacks II, we plan to scale up and improve all aspects of our event, from the attendance to the food & swag to everything in between. We've learned a lot from running SRC Hacks last year, and can't wait to see you at this year's bigger and better event!</p>
+                </section> -->
+                <p class="title" style="text-align: center;">This Year's Prizes</p>
+                <section style="margin-top: 3em">
+                    <p style="text-align: center;">
+<!--                       <b>Grand Prize:</b> Apple Watch Series 3's<br> -->
+                      Coming soon!
+<!--                         <b>2nd Place:</b> Google Home Minis<br>
+                        <b>3rd Place:</b> Thinkboards<br>
+                        <b>Programming Contest:</b> $100 Amazon Gift Card<br>
+                        <b>Up For Grabs:</b> $20 Amazon Gift Cards (Raffles/In-Event Activities), Make School Swag Bags, a DROCON Drone, EA Games, Raspberry Pi Accessories, and Shirts from CodeHS, Digitalocean, and Desmos!<br>
+                        <b>Specific Categories + More Special-Category Prizes To Be Announced The Day Of The Hackathon!</b> -->
+                    </p>
+<!--                 </section>
+                <p class="title" style="text-align: center;">Last Event's Stats</p>
+                <div id="counter">
+                    <div id="counterContainer"><div style="display: flex; flex-direction: row; justify-content: center;"><div class="counter-value" data-count="120">120</div><p style="font-size: 5em; margin-top: 0.25em;">+</p></div><p>Hackers Attended</p></div>
+                    <div id="counterContainer"><div style="display: flex; flex-direction: row; justify-content: center;"><p style="font-size: 5em; margin-top: 0.25em;">$</p><div class="counter-value" data-count="15000">15000</div><p style="font-size: 5em; margin-top: 0.25em;">+</p></div><p>In Prizes Awarded</p></div>
+                    <div id="counterContainer"><div style="display: flex; flex-direction: row; justify-content: center;"><div class="counter-value" data-count="20">20</div><p style="font-size: 5em; margin-top: 0.25em;">+</p></div><p>Mentors &amp; Judges</p></div>
+                </div>
+            </section> -->
+            <section class="wave">
+                <img id="wave1" src="images/wavecheck1.2.svg">
+            </section>  
+        </section>
+
+        <!-- FAQ -->
+
+        <section id="faq">
+            <section id="faqContent">
+                <p class="title">FAQ</p>
+                <!-- <section>
+                    <p class= "subtitle">What is a hackathon?</p>
+                    <p>Hackathons are where you bring your own original ideas to life. Hundreds of high school students from the Bay Area will gather and build something they're passionate about.</p>
+                </section> -->
+                <section>
+                    <p class="subtitle">Who can participate?</p>
+                    <p>This event is limited to high school (and middle school) students. Underrepresented minorities and students of low socioeconomic status are especially encouraged to participate. If you have graduated from high school, you can only apply to be a mentor.</p>
+                </section>
+                <section>
+                    <p class="subtitle">How much does it cost to participate?</p>
+                    <p>This event is 100% free!</p>
+                </section>
+                <section>
+                    <p class="subtitle">What if I can't code?</p>
+                    <p>No problem! We will be hosting many workshops to help new hackers learn valuable skills and create their own original projects! Additionally, several of the prize categories are judged on ideation rather than code.</p>
+                </section>
+                <section>
+                    <p class="subtitle">How many people can be in a team?</p>
+                    <p>Up to four people are allowed on one team.</p>
+                </section>
+                <!-- <section>
+                    <p class= "subtitle">Will there be prizes?</p>
+                    <p>Yes! Our event gives away prizes for finalists as well as some category prizes. Stay tuned for prize updates on our website!</p>
+                </section> -->
+<!--                 <section>
+                    <p class="subtitle">Is there a Code of Conduct?</p>
+                    <p>All attendees are expected to comply with our <a href="codeOfConduct.pdf" target="_blank" .=""><b>Code of Conduct</b></a>.</p>
+                </section> -->
+                <section>
+                    <p class="subtitle">I have another question...</p>
+                    <p>If you have a question, do not hesitate to email us at <a href="mailto:contact@katyhacks.org"><b>contact@katyhacks.org</b></a>. Feel free to also contact us on our <a href="https://discord.gg/4yAVqcS2JF" target="_blank"><b>Discord</b></a>.</p>
+                </section>
+            </section>
+        </section>
+
+        <!-- SCHEUDLE -->
+
+        <section id="schedule">
+                <section class="wave">
+                    <img id="wave3" src="images/wavecheck3.2.svg">
+                </section>
+                <section id="scheduleContent">
+                    <p class="title">Event Schedule*</p>
+                    <p>Coming soon!</p>
+<!--                     <p class="subtitle">First Day, Saturday</p>
+                    <table>
+                        <thead>
+                            <tr><th>Time</th>
+                            <th>Event</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>8:30 AM</td>
+                                <td>Check-in Begins</td>
+                            </tr>
+                            <tr>
+                                <td>9:30 AM</td>
+                                <td>Opening Ceremony</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 AM</td>
+                                <td>Hacking Begins!</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 AM</td>
+                                <td>Team Mixer</td>
+                            </tr>
+                            <!-- <tr>
+                                <td>10:30 AM</td>
+                                <td>HTML & CSS Web Development Workshop</td>
+                            </tr> -->
+<!--                             <tr>
+                                <td>12:30 PM</td>
+                                <td>Lunch Served</td>
+                            </tr> -->
+                            <!-- <tr>
+                                <td>1:00 PM</td>
+                                <td>
+                                    Intro to Game Development Workshop
+                                    <br>
+                                    <span style= "font-size: 75%">Hosted by Make School</span>
+                                </td>
+                            </tr> -->
+                            <!--<tr>
+                                <td>2:00 PM</td>
+                                <td>
+                                    iOS Development With Swift Workshop
+                                    <br>
+                                    <span style="font-size: 75%">Hosted by Make School</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4:00 PM</td>
+                                <td>
+                                    Landing a Tech Internship as a High Schooler Workshop
+                                    <br>
+                                    <span style="font-size: 75%">Hosted by Calix Huang</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5:30 PM</td>
+                                <td>Cup Stacking</td>
+                            </tr>
+                            <tr>
+                                <td>6:30 PM</td>
+                                <td>Dinner Served</td>
+                            </tr>
+                            <tr>
+                                <td>7:30 PM</td>
+                                <td>Programming Contest Registration</td>
+                            </tr>
+                            <tr>
+                                <td>8:00 PM</td>
+                                <td>Programming Contest</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 PM</td>
+                                <td>Smash Tournament</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="subtitle">Second Day, Sunday</p>
+                    <table>
+                        <thead>
+                            <tr><th>Time</th>
+                            <th>Event</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>12:00 AM</td>
+                                <td>Midnight Snack</td>
+                            </tr>
+                            <tr>
+                                <td>9:00 AM</td>
+                                <td>Submissions Due!</td>
+                            </tr>
+                            <tr>
+                                <td>9:00 AM</td>
+                                <td>Breakfast Served</td>
+                            </tr>
+                            <tr>
+                                <td>9:15 AM</td>
+                                <td>Judges Arrive</td>
+                            </tr>
+                            <tr>
+                                <td>9:30 AM</td>
+                                <td>Judging Begins</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 AM</td>
+                                <td>Judging Ends</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM</td>
+                                <td>Winners Announced &amp; Closing Ceremony</td>
+                            </tr>
+                            <tr>
+                                <td>12:30 PM</td>
+                                <td>Hackathon Concludes</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+<!--                     <p>*Schedule subject to change at any time without notice.</p> -->
+                </section>
+                <section class="wave">
+                    <img id="wave4" src="images/wavecheck4.svg">
+                </section>  
+        </section>
+
+        <!-- JUDGES -->
+
+        <section id="judges">
+            <section id="judgesContent">
+                <p class="title">Guest Speakers</p>
+                <section class="profileContainer">
+                    <p>Coming soon!</p>
+<!--                     <div class="profile">
+                        <img class="profilePhoto" src="images/judges/michael2.png">
+                        <section class="profileCaption">
+                            <p>Michael Francisco</p>
+                            <p>Co-founder and CTO</p>
+                            <p>Quantea Inc.</p>
+                        </section>
+                    </div> -->
+                </section>
+                <p class="title">Judges</p>
+                <section class="profileContainer">
+                    <p>Coming soon!</p>
+<!--                     <div class="profile">
+                        <img class="profilePhoto" src="images/judges/pinn1.jpg">
+                        <section class="profileCaption">
+                            <p>Pinn Janvatanavit</p>
+                            <p>Founder &amp; CEO</p>
+                            <p>TheRollingPinn.com</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="images/judges/vidya1.png">
+                        <section class="profileCaption">
+                            <p>Vidya Sankar</p>
+                            <p>Founder</p>
+                            <p>Machine Learning Labs</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="images/judges/pranay1.png">
+                        <section class="profileCaption">
+                            <p>Pranay Suresh</p>
+                            <p>Engineer @ Bolt</p>
+                            <p>Former Tech Lead, Tesla</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="images/judges/ben1.png">
+                        <section class="profileCaption">
+                            <p>Ben Simpson</p>
+                            <p>Full Stack Engineer</p>
+                            <p>Make School</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="images/judges/tyler1.png">
+                        <section class="profileCaption">
+                            <p>Tyler Holland</p>
+                            <p>Backend Engineer</p>
+                            <p>Make School</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="images/judges/jerome1.png">
+                        <section class="profileCaption">
+                            <p>Jerome Schmidt</p>
+                            <p>Data Scientist</p>
+                            <p>Make School</p>
+                        </section>
+                    </div> -->
+                </section>
+                <p class="subtitle">Interested in appearing at Katy Youth Hacks?</p>
+                <p style="text-align: center; margin-bottom: 2.5%">Don't hesitate to reach out to us at <a href="mailto:contact@katyhacks.org?subject=Interested%20In%Judging"><b>contact@katyhacks.org</b></a>!</p>
+            </section>
+        </section>
+
+        <!-- SPONSORS -->
+
+        <section id="sponsors">
+            <section class="wave">
+                <img id="wave5" src="images/wavecheck5.svg">
+            </section>  
+            <section id="sponsorsContent">
+                    <p class="title">Partners</p>
+                    <section class="sponsorContainer" id="partner">
+                        <a href="https://gwckaty.org" target="_blank"><img src="images/logos/hackClubBank2.png"></a>
+<!--                         <a href="https://makeschool.com" target="_blank"><img src="images/logos/makeSchool.png"></a> -->
+                    </section>
+                    <p class="title">Sponsors</p>
+<!--                     <section class="sponsorContainer" id="large">
+                        <a href="https://github.com/" target="_blank"><img src="images/logos/github2.png" class="logo" title="GitHub" alt="GitHub"></a>
+                        <a href="https://shawee.io/" target="_blank"><img src="images/logos/shawee2.png" class="logo" title="Shawee" alt="Shawee"></a>
+                        <a href="https://leangap.org/" target="_blank"><img src="images/logos/leangap2.png" class="logo" title="Leangap" alt="Leangap"></a>
+                        <a href="https://www.costco.com/" target="_blank"><img src="images/logos/costco.svg" class="logo" title="Costco" alt="Costco"></a>
+                    </section>
+                    <section class="sponsorContainer" id="small">
+                        <a href="https://codehs.com" target="_blank"><img src="images/logos/codehs.png" class="logo" title="CodeHS" alt="CodeHS"></a>
+                        <a href="https://jetbrains.com" target="_blank"><img src="images/logos/jetbrains.svg" title="JetBrains" alt="JetBrains"></a>
+                        <a href="https://www.ea.com/" target="_blank"><img src="images/logos/ea.png" class="logo" title="EA" alt="EA"></a>
+                        <a href="https://digitalocean.com" target="_blank"><img src="images/logos/do.png" class="logo" title="DigitalOcean" alt="DigitalOcean"></a>
+                        <a href="https://www.interviewcake.com" target="_blank"><img src="images/logos/interviewCake.png" class="logo" title="Interview Cake" alt="Interview Cake"></a>
+                        <a href="https://pixar.com" target="_blank"><img src="images/logos/pixar.png" class="logo" title="Pixar" alt="Pixar"></a>
+                        <a href="https://www.hackerearth.com/" target="_blank"><img src="images/logos/hackerearth.png" class="logo" title="Hackerearth" alt="Hackerearth"></a>
+                        <a href="https://www.wolfram.com" target="_blank"><img src="images/logos/wolframAlpha.png" class="logo" title="Wolfram Alpha" alt="Wolfram Alpha"></a>
+                        <a href="https://www.repl.it" target="_blank"><img src="images/logos/replit.png" class="logo" title="Repl.it" alt="Repl.it"></a>
+                        <a href="https://producthunt.com" target="_blank"><img src="images/logos/producthunt.svg" class="logo" title="Product Hunt" alt="Product Hunt"></a>
+                        <a href="https://www.raspberrypi.org" target="_blank"><img src="images/logos/raspberryPi.png" class="logo" title="Raspberry Pi" alt="Raspberry Pi"></a>
+                        <a href="https://www.stickermule.com" target="_blank"><img src="images/logos/stickermule.png" class="logo" title="stickermule" alt="stickermule"></a>
+                        <a href="https://desmos.com" target="_blank"><img src="images/logos/desmos.png" class="logo" title="Desmos" alt="Desmos"></a>
+                        <a href="https://www.think-board.com" target="_blank"><img src="images/logos/thinkboard.png" class="logo" title="Think Board" alt="Think Board"></a> 
+                        <a href="https://balsamiq.com/" target="_blank"><img src="images/logos/balsamiq.png" class="logo" title="balsamiq" alt="balsamiq"></a>
+                        <a href="https://executebig.org" target="_blank"><img src="images/logos/executeBig.png" class="logo" title="Execute Big" alt="Execute Big"></a>
+                    </section>
+                    <p class="title" style="margin-bottom: 0.5em">Food Partners</p>
+                    <section class="sponsorContainer" id="small">
+                        <a href="http://www.in-n-out.com/" target="_blank"><img src="images/logos/innout.png" class="logo" title="In-n-Out" alt="In-n-Out"></a>
+                        <a href="http://t4.com.tw/en/" target="_blank"><img src="images/logos/t4.png" class="logo" title="T4" alt="T4"></a>
+                        <a href="http://www.noahs.com/" target="_blank"><img src="images/logos/noahs.png" class="logo" title="Noah's" alt="Noah's"></a>
+                    </section>
+                    <p class="title">Special Thanks To:</p>
+                    <section class="sponsorContainer" id="partners">
+                        <a href="https://www.lockheedmartin.com/en-us/who-we-are/communities/codequest.html" target="_blank"><img src="images/logos/codequest3.png" class="logo" title="Code Quest" alt="Code Quest"></a>
+                    </section> -->
+                    <p class="subtitle">Interested in sponsoring us?</p>
+                    <p style="text-align: center; margin-bottom: 2.5%"><!--Check out our <a href="prospectus2019.pdf" target="_blank"><b>sponsorship prospectus</b></a> or s-->Shoot us an email at <a href="mailto:contact@katyhacks.org?subject=Interested%20In%20Sponsoring%20Katy%20Youth%20Hacks"><b>contact@katyhacks.org</b></a>!</p>
+                    <p style"text-align: center; margin-bottom: 2.5%">Or, support us on our <a herf="https://hack.ms/donate-katyhacks" target="blank"><b>donation page</b></a>.</p>
+            </section>
+            <section class="wave">
+                <img id="wave6" src="images/wavecheck6.2.svg">
+            </section>  
+        </section>
+
+        <!-- TEAM -->
+
+        <section id="team">
+            <section id="teamContent">
+                <p class="title">The Katy Youth Hacks Team</p>
+                <section class="profileContainer">
+                 
+                    <div class="profile">
+                        <img class="profilePhoto" src="hottieNicole.jpeg">
+                        <section class="profileCaption">
+                            <p>Nicole Xu</p>
+                            <p>Hot Person</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="victoria.jpeg">
+                        <section class="profileCaption">
+                            <p>Victoria Zhang</p>
+                            <p>Co-President</p>
+                        </section>
+                    </div>
+                </section>
+                <section class="profileContainer">
+                    <!-- <div class= "profile">
+                        <img class= "profilePhoto" src= "images/team/zain2.png">
+                        <section class= "profileCaption">
+                            <p>Zain Vanjara</p>
+                            <p>Outreach Team</p>
+                        </section>
+                    </div> -->
+                    <div class="profile">
+                        <img class="profilePhoto" src="ella.jpeg">
+                        <section class="profileCaption">
+                            <p>Ella Li</p>
+                            <p>Logistics Team</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="hottieCrystal.jpeg">
+                        <section class="profileCaption">
+                            <p>Crystal Yang</p>
+                            <p>Hot Person</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="asmitha.jpeg">
+                        <section class="profileCaption">
+                            <p>Asmitha Balamurugan</p>
+                            <p>Logistics Team</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="meghana.jpeg">
+                        <section class="profileCaption">
+                            <p>Meghana Kunapareddy</p>
+                            <p>Logistics Team</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="prisha.jpeg">
+                        <section class="profileCaption">
+                            <p>Prisha Singh</p>
+                            <p>Sponsorships Team</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="tapisar.jpeg">
+                        <section class="profileCaption">
+                            <p>Tapisar Singh<p>
+                            <p>Sponsorships Team</p>
+                        </section>
+                    </div>
+                    <div class="profile">
+                        <img class="profilePhoto" src="sanika.jpeg">
+                        <section class="profileCaption">
+                            <p>Sanika Misra</p>
+                            <p>Public Relations</p>
+                        </section>
+                    </div>
+                  
+                   
+                </section>
+                <p class="subtitle">Want to help organize Katy Hacks? We're looking for help!</p>
+                <p style="text-align: center; margin-bottom: 2.5%">Reach out to us at <a href="mailto:contact@katyhacks.org?subject=Interested%20In%Organizing"><b>contact@katyhacks.org</b></a> for more information on how to join the team!</p>
+            </section>
+        </section>
+
+        <!-- FOOTER -->
+
+        <section id="footer">
+            <section class="wave">
+                <img id="wave7" src="images/wavecheck8.2.svg">
+            </section> 
+            <section id="footerContent">
+                <p style="font-size: 4em">Questions? Send us an <a href="mailto:contact@katyhacks.org"><b>email</b></a>!</p>
+                <hr>
+<!--                 <p>Check out <a href="2018.html" target="_blank"><b>last year's event</b></a>!</p> -->
+<!--                 <p>Connect with us on <a href="https://twitter.com/srchacks" target="_blank"><b>Twitter</b></a> and <a href="https://instagram.com/srchacks" target="_blank"><b>Instagram</b></a>: @srchacks</p> -->
+                <p>Hop onto our <a href="https://discord.gg/4yAVqcS2JF" target="_blank"><b>Event Discord</b></a></p>
+<!--                 <p>Visit our <a href="https://calico.berkeley.edu/" target="_blank"><b>Programming Competition</b></a></p> -->
+<!--                 <p>Copyright © 2018 - 2020 SRC Hacks. All Rights Reserved.</p> -->
+                <p>Made with ♥ by KatyYouthHacks.</p>
+<!--                 <br>
+                <p style="font-size: 1.5em; font-weight: bold">CODE QUEST® is a registered trademark of Lockheed Martin Corporation and is used with the permission of Lockheed Martin Corporation.  All rights are reserved.</p> -->
+            </section>
+        </section>
+        <script>
+            window.onload = function() {
+                var particles = Particles.init({
+                    selector: '.background',
+                    color: ['#99ccff'],
+                    connectParticles: true,
+                    maxParticles: 250,
+                    speed: 0.5,
+                    minDistance: 100,
+                    responsive: [
+                        {
+                            breakpoint: 1500,
+                            options: {
+                                maxParticles: 200
+                            }
+                        }, {
+                            breakpoint: 1000,
+                            options: {
+                                maxParticles: 125
+                            }
+                        }, {
+                            breakpoint: 750,
+                            options: {
+                                maxParticles: 75
+                            }
+                        }, {
+                            breakpoint: 350,
+                            options: {
+                                maxParticles: 50
+                            }
+                        }, {
+                            breakpoint: 250,
+                            options: {
+                                maxParticles: 35
+                            }
+                        }
+                    ]
+                });
+            };
+        </script>
+        <script src="particles.min.js"></script>
+        <script>
+            var a = 0;
+            $(window).scroll(function() {
+
+            var oTop = $('#counter').offset().top - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+                $('.counter-value').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({
+                    countNum: $this.text()
+                }).animate({
+                    countNum: countTo
+                    },
+
+                    {
+
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                        // alert('finished');
+                    }
+
+                    });
+                });
+                a = 1;
+            }
+
+            });
+        </script>
+    
+<div id="forest-ext-shadow-host"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
