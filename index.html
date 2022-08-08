@@ -39,7 +39,7 @@
     p {
       margin: 0;
       padding-bottom: 0;
-      color: #111111;
+      color: "#111111";
       font-size: 1.5em;
       margin-bottom: 1.5em;
       /* font-family: Nexa; */
@@ -188,6 +188,138 @@
       user-select: none;
       overflow: hidden;
     }
+      
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+
+    font-size: 50px;
+}
+
+
+
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: 	#FA8072;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
 
     #heroActive {
       display: flex;
@@ -214,7 +346,7 @@
       display: flex;
       justify-content: left;
       align-items: center;
-      animation: fadeIn 1.5s ease 1.75s;
+      animation: fadeIn .5s ease 1s;
       animation-fill-mode: backwards;
     }
 
@@ -274,7 +406,7 @@
       font-weight: normal;
       color: white;
       font-family: Bebas Neue;
-      animation: fadeIn 1.5s ease 1.75s;
+      animation: fadeIn .5s ease 1s;
       animation-fill-mode: backwards;
       margin-bottom: 0;
     }
@@ -514,6 +646,8 @@
       height: fit-content;
       width: 100%;
     }
+            
+                
 
     #sponsorsContent {
       margin: 5em 10%;
@@ -920,6 +1054,25 @@
                     <p class= "title">What's New This Year</p>
                     <p>This year, we will be hosting our second annual SRC Hacks event. Last year, we had hundreds of attendees submitting all sorts of projects, with $20,000 in prizes being given away. For SRC Hacks II, we plan to scale up and improve all aspects of our event, from the attendance to the food & swag to everything in between. We've learned a lot from running SRC Hacks last year, and can't wait to see you at this year's bigger and better event!</p>
                 </section> -->
+         <div class="context">
+
+    </div>
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
       <p class="title" style="text-align: center;">This Year's Prizes</p>
 
       <section style="margin-top: 3em; font-size: 1.25em">
@@ -1111,7 +1264,7 @@
             </tr>
             <tr>
               <td>6:00 PM</td>
-              <td>Unity Workshop w/ </td>
+              <td>Unity Workshop w/ Nikhil Ruia</td>
             </tr>
             <tr>
               <td>8:00 PM</td>
@@ -1272,8 +1425,8 @@
                     </section> -->
           <p class="subtitle">Interested in sponsoring us?</p>
           <p style="text-align: center; margin-bottom: 2.5%">
-            <!--Check out our <a href="prospectus2019.pdf" target="_blank"><b>sponsorship prospectus</b></a> or s-->Shoot
-            us an email at <a
+            Check out our <a href="prospectus2022.pdf" target="_blank"><b>sponsorship prospectus</b></a> or shoot us an
+            email at <a
               href="mailto:contact@katyhacks.org?subject=Interested%20In%20Sponsoring%20Katy%20Youth%20Hacks"><b>contact@katyhacks.org</b></a>!
           </p>
           <p style="text-align: center; margin-bottom: 2.5%">Or, support us on our <a
@@ -1318,28 +1471,28 @@
               <img class="profilePhoto" src="hottieCrystal.jpeg">
               <section class="profileCaption">
                 <p>Crystal Yang</p>
-                <p>Outreach Coordinators</p>
+                <p>Outreach</p>
               </section>
             </div>
             <div class="profile">
               <img class="profilePhoto" src="asmitha.jpg">
               <section class="profileCaption">
                 <p>Asmitha Balamurugan</p>
-                <p>Outreach Coordinators</p>
+                <p>Outreach</p>
               </section>
             </div>
             <div class="profile">
               <img class="profilePhoto" src="meghana.jpg">
               <section class="profileCaption">
                 <p>Meghana Kunapareddy</p>
-                <p>Project Coordinators</p>
+                <p>Projects</p>
               </section>
             </div>
             <div class="profile">
               <img class="profilePhoto" src="prishResized.jpg">
               <section class="profileCaption">
                 <p>Prisha Singh</p>
-                <p>Project Coordinators</p>
+                <p>Projects</p>
               </section>
             </div>
             <div class="profile">
@@ -1380,85 +1533,20 @@
           <p>Made with ♥ by KatyYouthHacks.</p>
           <!--                 <br>
                 <p style="font-size: 1.5em; font-weight: bold">CODE QUEST® is a registered trademark of Lockheed Martin Corporation and is used with the permission of Lockheed Martin Corporation.  All rights are reserved.</p> -->
-        </section>
-      </section>
-      <!--         <script>
-          window.onload = function () {
-            var particles = Particles.init({
-              selector: '.background',
-              color: ['#99ccff'],
-              connectParticles: true,
-              maxParticles: 250,
-              speed: 0.5,
-              minDistance: 100,
-              responsive: [
-                {
-                  breakpoint: 1500,
-                  options: {
-                    maxParticles: 200
-                  }
-                }, {
-                  breakpoint: 1000,
-                  options: {
-                    maxParticles: 125
-                  }
-                }, {
-                  breakpoint: 750,
-                  options: {
-                    maxParticles: 75
-                  }
-                }, {
-                  breakpoint: 350,
-                  options: {
-                    maxParticles: 50
-                  }
-                }, {
-                  breakpoint: 250,
-                  options: {
-                    maxParticles: 35
-                  }
-                }
-              ]
-            });
-          };
-        </script> -->
-      <!--         <script src="particles.min.js"></script> -->
-      <!--         <script>
-          var a = 0;
-          $(window).scroll(function () {
-
-            var oTop = $('#counter').offset().top - window.innerHeight;
-            if (a == 0 && $(window).scrollTop() > oTop) {
-              $('.counter-value').each(function () {
-                var $this = $(this),
-                  countTo = $this.attr('data-count');
-                $({
-                  countNum: $this.text()
-                }).animate({
-                  countNum: countTo
-                },
-
-                  {
-
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function () {
-                      $this.text(Math.floor(this.countNum));
-                    },
-                    complete: function () {
-                      $this.text(this.countNum);
-                      // alert('finished');
-                    }
-
-                  });
-              });
-              a = 1;
-            }
-
-          });
-        </script> -->
-
-      <div id="forest-ext-shadow-host"></div>
+          
+                                                                                                                                                                                                                                                                                     
+                                                                                    
+                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                       
+           
+                           
+           
+                           
+           
+                                      
+                                                                                                                                                                                                                                                                                                           
+          <div id="forest-ext-shadow-host"></div>
 </body>
 <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
