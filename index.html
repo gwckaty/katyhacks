@@ -188,138 +188,138 @@
       user-select: none;
       overflow: hidden;
     }
-      
-
-.context {
-    width: 100%;
-    position: absolute;
-    top:50vh;
-    
-}
-
-.context h1{
-    text-align: center;
-
-    font-size: 50px;
-}
 
 
+    .context {
+      width: 100%;
+      position: absolute;
+      top: 50vh;
 
+    }
 
-.circles{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+    .context h1 {
+      text-align: center;
 
-.circles li{
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: 	#FA8072;
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-    
-}
-
-.circles li:nth-child(1){
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2){
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3){
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4){
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5){
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6){
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9){
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10){
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
+      font-size: 50px;
+    }
 
 
 
-@keyframes animate {
 
-    0%{
+    .circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .circles li {
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: #FEB086;
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+
+    }
+
+    .circles li:nth-child(1) {
+      left: 25%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2) {
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3) {
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 0s;
+      animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5) {
+      left: 65%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6) {
+      left: 75%;
+      width: 110px;
+      height: 110px;
+      animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8) {
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 15s;
+      animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9) {
+      left: 20%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 2s;
+      animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10) {
+      left: 85%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 0s;
+      animation-duration: 11s;
+    }
+
+
+
+    @keyframes animate {
+
+      0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
-    }
+      }
 
-    100%{
+      100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
-    }
+      }
 
-}
+    }
 
     #heroActive {
       display: flex;
@@ -646,8 +646,8 @@
       height: fit-content;
       width: 100%;
     }
-            
-                
+
+
 
     #sponsorsContent {
       margin: 5em 10%;
@@ -957,56 +957,6 @@
       <!-- <p id= "heroTitle">SRC CODE II</p> -->
       <section id="heroTitle">
         <img src="img/logo_long.png" style="max-width: 90%;">
-        <!--                     <svg viewBox="0 0 355 700">
-                        <g id="s">
-                            <path d="M26 532c0 112 55 176 162 176s162 -64 162 -176v-22h-104v29c0 50 -20 69 -55 69s-55 -19 -55 -69c0 -144 215 -171 215 -371c0 -112 -56 -176 -164 -176s-164 64 -164 176v43h104v-50c0 -50 22 -68 57 -68s57 18 57 68c0 144 -215 171 -215 371z" transform="scale(1,-0.97) translate(-10,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 400 700">
-                        <g id="r">
-                            <path d="M382 0h-112c-6 18 -10 29 -10 86v110c0 65 -22 89 -72 89h-38v-285h-110v700h166c114 0 163 -53 163 -161v-55c0 -72 -23 -119 -72 -142c55 -23 73 -76 73 -149v-108c0 -34 1 -59 12 -85zM203 600h-53v-215h43c41 0 66 18 66 74v69c0 50 -17 72 -56 72z" transform="scale(1,-1) translate(0,-700)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 390 700">
-                        <g id="c">
-                            <path d="M255 261h104v-93c0 -112 -56 -176 -164 -176s-164 64 -164 176v364c0 112 56 176 164 176s164 -64 164 -176v-68h-104v75c0 50 -22 69 -57 69s-57 -19 -57 -69v-378c0 -50 22 -68 57 -68s57 18 57 68v100z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 390 700">
-                        <g id="h">
-                            <path d="M150 300v-300h-110v700h110v-300h125v300h112v-700h-112v300h-125z" transform="scale(1,-0.97) translate(-20,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 400 700">
-                        <g id="a">
-                            <path d="M284 700l112 -700h-111l-19 127h-135l-19 -127h-101l112 700h161zM198 576l-53 -354h106z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 390 700">
-                        <g id="c">
-                            <path d="M255 261h104v-93c0 -112 -56 -176 -164 -176s-164 64 -164 176v364c0 112 56 176 164 176s164 -64 164 -176v-68h-104v75c0 50 -22 69 -57 69s-57 -19 -57 -69v-378c0 -50 22 -68 57 -68s57 18 57 68v100z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 400 700">
-                        <g id="k">
-                            <path stroke-width="5" d="M291 0l-107 279l-34 -64v-215h-110v700h110v-305l144 305h110l-153 -312l153 -388h-113z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 390 700">
-                        <g id="s">
-                            <path d="M26 532c0 112 55 176 162 176s162 -64 162 -176v-22h-104v29c0 50 -20 69 -55 69s-55 -19 -55 -69c0 -144 215 -171 215 -371c0 -112 -56 -176 -164 -176s-164 64 -164 176v43h104v-50c0 -50 22 -68 57 -68s57 18 57 68c0 144 -215 171 -215 371z" transform="scale(1,-0.97) translate(0,-710.5)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="25 0 175 700">
-                        <g id="i">
-                            <path d="M40 0v700h110v-700h-110z" transform="scale(1,-1) translate(0,-700)"></path>
-                        </g>
-                    </svg>
-                    <svg viewBox="25 0 175 700">
-                        <g id="i">
-                            <path d="M40 0v700h110v-700h-110z" transform="scale(1,-1) translate(0,-700)"></path>
-                        </g>
-                    </svg> -->
       </section>
       <section id="heroSubContainer">
         <p id="heroSubtitle">August 12 - 14</p>
@@ -1017,7 +967,7 @@
           <p><a href="https://forms.gle/c4BgC2EqpqcGPyXo6" target="_blank">Sign-up as an Attendee</a></p>
         </button>
         <button class="register">
-          <p><a href="mailto:contact@katyhacks.org?subject=Interested%20In%Mentoring">Sign-up as a Mentor</a></p>
+          <p><a href="https://katy-youth-hacks.devpost.com/" target="_blank">Join Our Devpost</a></p>
         </button>
 
         <button>
@@ -1054,25 +1004,25 @@
                     <p class= "title">What's New This Year</p>
                     <p>This year, we will be hosting our second annual SRC Hacks event. Last year, we had hundreds of attendees submitting all sorts of projects, with $20,000 in prizes being given away. For SRC Hacks II, we plan to scale up and improve all aspects of our event, from the attendance to the food & swag to everything in between. We've learned a lot from running SRC Hacks last year, and can't wait to see you at this year's bigger and better event!</p>
                 </section> -->
-         <div class="context">
+      <div class="context">
 
-    </div>
+      </div>
 
 
-<div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-    </div >
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <p class="title" style="text-align: center;">This Year's Prizes</p>
 
       <section style="margin-top: 3em; font-size: 1.25em">
@@ -1261,6 +1211,10 @@
             <tr>
               <td>4:00 PM</td>
               <td>Echo3D Workshop</td>
+            </tr>
+            <tr>
+              <td>6:00 PM</td>
+              <td>CS College Student Panel</td>
             </tr>
             <tr>
               <td>6:00 PM</td>
@@ -1531,21 +1485,6 @@
             @katyyouthhacks</p>
           <p>Hop onto our <a href="https://discord.gg/4yAVqcS2JF" target="_blank"><b>Event Discord</b></a></p>
           <p>Made with ♥ by KatyYouthHacks.</p>
-          <!--                 <br>
-                <p style="font-size: 1.5em; font-weight: bold">CODE QUEST® is a registered trademark of Lockheed Martin Corporation and is used with the permission of Lockheed Martin Corporation.  All rights are reserved.</p> -->
-          
-                                                                                                                                                                                                                                                                                     
-                                                                                    
-                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-                                       
-           
-                           
-           
-                           
-           
-                                      
-                                                                                                                                                                                                                                                                                                           
           <div id="forest-ext-shadow-host"></div>
 </body>
 <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
